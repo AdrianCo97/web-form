@@ -15,8 +15,10 @@
     <label>Skills:</label>
     <input type="text" v-model="tempSkill" v-on:keyup.enter="addSkill" />
 
-    <div v-for="skill in skills">
-        <p class="skill">{{skill}}</p>
+    <div class="skills">
+      <div v-for="skill in skills">
+        <p class="skill">{{ skill }}</p>
+      </div>
     </div>
 
     <div class="terms">
@@ -85,11 +87,16 @@ select {
   border-bottom: 1px solid #ddd;
   color: #555;
 }
-.skill{
-    background-color: rgb(182, 216, 224);
-    width: fit-content;
-    padding: 10px;
-    border-radius: 4px;
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+}
+.skill {
+  background-color: rgb(182, 216, 224);
+  width: fit-content;
+  padding: 10px;
+  margin: 10px 10px 0 0;
+  border-radius: 4px;
 }
 input[type="checkbox"] {
   display: inline-block;
